@@ -1,0 +1,13 @@
+<section>
+  <h1>Payment failed, You can pay on-site during the day of the appointment</h1>
+  <p>You will be redirected to your appointments in five seconds!</p>
+</section>
+{{#if logged_in}}
+    <script type="text/javascript">
+    setTimeout(function(){
+      if (window.location.pathname === "/checkout") {
+        location.replace("/my-appointment");
+      }
+    }, 5000);
+    </script>
+  {{/if}}

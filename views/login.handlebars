@@ -1,0 +1,54 @@
+<div class="text-center col-12 date-form">
+        <div>
+          <h2 class="login-main card-header borders">Login</h2>
+          <form action="/api/users/login" method="post" class="form login-form">
+            <div class="form-group form-floating mb-3 col-3 ">
+              <a>Email:</a>
+              <input for="email-login" name="email" class="form-input form-control" type="text" id="email-login" />
+            </div>
+            <div class="form-group form-floating mb-3 col-3">
+              <a>Password:</a>
+              <input for="password-login" name="password" class="form-input form-control" type="password" id="password-login" />
+            </div>
+
+            <div class="form-group">
+              <button class="btn  btn-outline-secondary col-1 text-center" type="submit">Login</button>
+            </div>
+          </form>
+        </div>
+        
+         <p>
+            <br>
+            <a id="askQ"data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Don't have an account? Click here!
+            </a>
+         </p>
+         <div class="collapse" id="collapseExample">
+            <div id="signup">
+                <h2>Sign up</h2>
+                <form action="/api/users/signup" method="post"class="form signup-form">
+                    <div class="form-group form-floating mb-3 col-3">
+                      <a>First Name:</a>
+                      <input for="name-signup" name="first_name" class="form-input form-control" type="text" id="firstname-signup" />
+                    </div>
+                    <div class="form-group form-floating mb-3 col-3">
+                      <a>Last Name:</a>
+                      <input for="name-signup" name="last_name" class="form-input form-control" type="text" id="lastname-signup" />
+                    </div>
+                    <div class="form-group form-floating mb-3 col-3">
+                      <a>Email:</a>
+                      <input for="email-signup" name="email" class="form-input form-control" type="text" id="email-signup" />
+                    </div>
+                    <div class="form-group form-floating mb-3 col-3">
+                      <a>Password:</a>
+                      <input for="password-signup" name="password" class="form-input form-control" type="password" id="password-signup" />
+                    </div>
+                    <div class="form-group">
+                      <button class="btn btn-outline-secondary" type="submit">Sign up</button>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+
+<script src="./js/login.js"></script>

@@ -1,0 +1,109 @@
+<section class="text-center">
+<form action="/appointment/date" method="get" class="form signup-form date text-center">
+        <div class="form-group form-floating mb-3">
+          <div> Please select a date for your appointment:</div>
+          <label for="datepicker-4"></label>
+          <div class="col-12 center-input">
+          <div class="col-3"></div>
+          <div class="col-3">
+          <input name="app_date" class="form-input form-group form-control text-center" type ="text" id ="datepicker-4" />
+          </div>
+          <div class="col-3"></div>
+          </div>    
+          <button class="btn btn-outline-secondary" type="submit" id="app-date">Check availability</button>
+        </div>
+</form>
+
+
+{{#if showOptions}}
+
+<form action="/api/appointment/create" method="post">
+<label for="date">Appointment Date</label>
+<input  type="date" name="app_date" value={{date}} id="date" readonly>
+<div class="avail-margin"></div>
+<div id="services" class="dropdown">
+ <label for="service">Please select a service</label>
+  <select name="service" id="service">
+  {{#each services.services as |service|}}
+  <option id="service" value="{{service.name}}" >{{service.name}}</option>
+  {{/each}}
+  </select>
+</div>
+
+<h1 id="app_date" value={{service.price}}>{{service.price}}</h1>
+
+<div class="text-center dropdown" id="selected-hour">
+  <label for="app_hour">Please select a time</label>
+  <select id="app_hour" name="app_hour">
+  {{#if availability.h08}}
+    {{else}}
+    <option value=8 >8:00 am</option>
+  {{/if}}
+
+  {{#if availability.h10}}
+    {{else}}
+    <option value=10 >10:00 am</option>
+  {{/if}}
+
+  {{#if availability.h12}}
+    {{else}}
+    <option value=12 >12:00 pm</option>
+  {{/if}}
+
+  {{#if availability.h14}}
+    {{else}}
+    <option value=14 >2:00 pm</option>
+  {{/if}}
+
+  {{#if availability.h16}}
+    {{else}}
+    <option value=16 >4:00 pm</option>
+  {{/if}}
+
+  {{#if availability.h18}}
+    {{else}}
+    <option value=18 >6:00 pm</option>
+  {{/if}}
+
+  {{#if availability.h20}}
+    {{else}}
+    <option value=20 >8:00 pm</option>
+  {{/if}}
+ </select>
+</div>
+
+{{else}}
+{{/if}}
+
+<div class="avail-margin"></div>
+<button class="btn btn-outline-secondary" type="submit" name="button">Book Lashes!</button>
+</form>
+
+ <script>
+        $(function() {
+           $( "#datepicker-4" ).datepicker({
+              dateFormat:"yy-mm-dd",
+              dateField: "#datepicker-4",
+              beforeShowDay : function (date) {
+                 var dayOfWeek = date.getDay ();
+                 // 0 : Sunday, 1 : Monday, ...
+                 if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                 else return [true];
+                }
+              });
+            });
+</script>
+
+{{#if logged_in}}
+    <script type="text/javascript">
+      if (window.location.pathname === "/api/users/login" || window.location.pathname === "/api/users/signup") {
+        location.replace("/");
+      }
+    </script>
+  {{/if}}
+
+
+</section>
+
+
+<!-- <script src="/js/newAppoiment.js"></script> -->

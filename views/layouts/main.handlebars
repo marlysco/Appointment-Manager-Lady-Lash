@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lady Lash</title>
+  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   {{!-- added font-family --}}
+   <script src="https://js.stripe.com/v3/"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+  <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<div>
+  <div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+
+          <button class="navbar-toggler btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <span class="brandTitle">Lady Lash</span>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item ">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/appointment">Create Appointment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/avaliability">Avaliability</a>
+              </li>
+                {{#if logged_in}}
+                  <li class="nav-item">
+                  <a class="nav-link" href="/my-appointment">My Appointments</a>
+                  </li>
+                {{/if}}
+              <li class="nav-item">
+                <a class="nav-link" href="/#about-us">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/#business-hours">Business Hours</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact-us">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                {{#if logged_in}}
+                <a class="nav-link" href="#" id="logout">Logout</a>
+                {{else}}
+                <a class="nav-link" href="/login">Login</a>
+                {{/if}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+  </div>
+</div>
+{{!-- changed src for img --}}
+<div class="card  borders">
+  <img  class="card-img-top borders" src="/image/eyelash.png" alt="Card image cap">
+    {{#if about_us}}
+    <div class="col-12 about-us-main borders">
+    <div id="about-us" class="card-header text-center">
+      <h3 class="about-us color">About Us</h3>
+      <div>
+      <p class="card-text">Lash Lady offers a range of services for full set classic eyelash extensions, refills as well as cleaning and removal. Live the best experience geting your lashes done by the best in town: Lady Lash!</p>
+      </div>
+    </div>  
+  </div>
+  {{/if}}
+</div>
+
+{{{body}}}
+
+<div class="card text-center borders">
+  <div id="contact-us" class="card-header borders color">
+    Follow us on Instagram! 
+  </div> 
+    <a class="btn btn-lg " href="https://www.instagram.com/ladylash_bylisset/" target="_blank" role="button"
+  ><i class="fa fa-instagram"></i></a>
+  <div class="card-body">
+    <p class="card-text">Cape Coral 📍 </p>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  {{#if logged_in}}
+    <script src="/js/logout.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      if (window.location.pathname === "/api/users/login" || window.location.pathname === "/api/users/signup" || window.location.pathname === "/api/service/create") {
+        location.replace("/");
+      }
+    </script>
+  {{/if}}

@@ -1,0 +1,15 @@
+<section class="card">
+  <form action="/api/appointment/create-checkout-session" method="POST" class="card-body">
+  <input type="text" name="service" value="{{service.name}}" readonly>
+  <input type="number" name="price" value="{{service.price}}" readonly>
+  <button class="btn btn-outline-secondary" type="submit" name="button">Pay with Card</button>
+  </form>
+</section>
+{{#if logged_in}}
+  <script src="/js/logout.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    if (window.location.pathname === "/api/appointment/create") {
+      location.replace("/checkout");
+    }
+  </script>
+{{/if}}

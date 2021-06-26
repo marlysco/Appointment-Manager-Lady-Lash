@@ -1,0 +1,26 @@
+
+<div class="text-center col-12 date-form">
+        <div id="createService" class="">
+            <h2 class="color text-center business-hours">New Lady Lash Service</h2>
+            <form action="/api/service/create" method="post" class="form signup-form text-center">
+              <div class="text-center col-12">
+               <div class="form-group form-floating col-3">
+                  <a>Service Name:</a>
+                  <input for="service-name" name="name" class="form-input form-control" type="text" id="service-name"/>
+                </div>
+                <div class="form-group form-floating col-3">
+                  <a>Description:</a>
+                  <input for="service-description" name="description" class="form-input form-control" type="text" id="service-description" />
+                </div>
+                <label for="service-price">Price:</label>
+                <div class="form-group form-floating col-3">
+                  <span class="input-group-text" id="inputGroupPrepend">$</span> 
+                  <input name="price"  class="form-input form-control" type="text" id="service-price" />
+                </div>
+              </div>
+                <div class="form-group">
+                  <button class="btn btn-outline-secondary" type="submit">Add service</button>
+                </div>
+            </form>
+        </div>
+</div>

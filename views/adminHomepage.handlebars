@@ -1,0 +1,116 @@
+<section class="text-center">
+  <form action="/lady-lash-admin-homepage" method="get"class="form signup-form">
+          <div class="form-group form-floating mb-3 col-12">
+            <p class="color business-hours"> Hello Lady Lash!</p>
+            <p class="color business-hours"> Select date to view appointments</p>
+            <div class="col-7"></div>
+            <div class="col-3 text-center">
+            <input name="app_date" class="form-input form-control" type ="date"/>
+            </div>
+            <div class="col-3" ></div>
+            <button class="btn btn-outline-secondary" type="submit">See Appointments</button>
+          </div>
+  </form>
+</section>
+
+<section class="text-center">
+  <h1 class="business-hours">{{date}}</h1>
+</section>
+<section class="col-4 text-center">
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h08}}
+      <p>8:00 AM</p>
+      <p>Guest Name: {{appointments.appointment08.user.first_name}} {{appointments.appointment08.user.last_name}}</p>
+      <p>Service: {{appointments.appointment08.service.name}}</p>
+      {{else}}
+        <p>8:00 AM</p>
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"08:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="avail-margin"></div>
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h10}}
+      <p>10:00 AM</p>
+      <p>Guest Name: {{appointments.appointment10.user.first_name}} {{appointments.appointment10.user.last_name}}</p>
+      <p>Service: {{appointments.appointment10.service.name}}</p>
+      {{else}}
+        <p>10:00 AM</p>
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"10:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="avail-margin"></div>
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h12}}
+      <p>12:00 PM</p>
+      <p>Guest Name: {{appointments.appointment12.user.first_name}} {{appointments.appointment12.user.last_name}}</p>
+      <p>Service: {{appointments.appointment12.service.name}}</p>
+      {{else}}
+        <p>12:00 PM</p>
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"12:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="avail-margin"></div>
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h14}}
+      <p>14:00 PM</p>
+      <p>Guest Name: {{appointments.appointment14.user.first_name}} {{appointments.appointment14.user.last_name}}</p>
+      <p>Service: {{appointments.appointment14.service.name}}</p>
+      {{else}}
+        <p>14:00 PM</p>
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"14:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="avail-margin"></div>
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h16}}
+      <p>16:00 PM</p>
+      <p>Guest Name: {{appointments.appointment16.user.first_name}} {{appointments.appointment16.user.last_name}}</p>
+      <p>Service: {{appointments.appointment16.service.name}}</p>
+      {{else}}
+        <p>16:00 PM</p>
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"16:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="avail-margin"></div>
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h18}}
+      <p>18:00 PM</p>
+      <p>Guest Name: {{appointments.appointment18.user.first_name}} {{appointments.appointment18.user.last_name}}</p>
+      <p>Service: {{appointments.appointment18.service.name}}</p>
+      {{else}}
+        <p>18:00 PM</p>
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"18:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+  <div class="avail-margin"></div>
+  <div class="card">
+    <div class="card-body">
+      {{#if availability.h20}}
+      <p>20:00 PM</p>
+      <p>Guest Name: {{appointments.appointment20.user.first_name}} {{appointments.appointment20.user.last_name}}</p>
+      <p>Service: {{appointments.appointment20.service.name}}</p>
+      {{else}}
+        <p>Open</p>
+        {{!-- <button type="submit" name="block-time" data-time-block:"20:00">Block Time</button> --}}
+      {{/if}}
+    </div>
+  </div>
+</section>

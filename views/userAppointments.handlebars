@@ -1,0 +1,16 @@
+{{#each appointments.appointments as |appointment|}}
+<section class="card">
+  <div id="about-us" class="card-header">
+  <h3>{{appointment.app_date}}</h3>
+  </div>
+  <div class="card-body">
+  <p class="card-text">Time: {{appointment.app_hour}}</p>
+  <p class="card-text">Service: {{appointment.service.name}}</p>
+  </div>
+</section>
+{{/each}}
+<script type="text/javascript">
+  if (window.location.pathname === "/api/appointment/create") {
+    location.replace("/checkout");
+  }
+</script>

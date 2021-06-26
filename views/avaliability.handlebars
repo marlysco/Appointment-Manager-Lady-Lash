@@ -1,0 +1,73 @@
+<section class="text-center">
+  
+<form  id="myDate" action="/avaliability" method="get" class="">
+        <div  class="form form-group form-floating mb-3">
+          <div class="login-main color"> Please select a date for your appointment:</div>
+          <div class="avail-margin"></div>
+          <div class="col-3">
+          <input name="app_date" class="form-input form-control input" type ="text" id ="datepicker-4" />
+          </div>
+          <div class="avail-margin"></div>
+          <button class="btn btn-outline-secondary" type="submit" id="app-date">Check availability</button>
+        </div>
+</form>
+
+<section>
+  <h5 class="login-main">Date: {{date}}</h5>
+</section>
+
+    <div>
+     <div class="list-group text-center">
+      {{#if availability.h08}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action ">08.00 AM   Please click here to make an appointment</a>
+      <div class="avail-margin"></div>
+      {{/if}}
+      {{#if availability.h10}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action avail-margin">10.00 AM   Please click here to make an appointment</a>
+      <div class="avail-margin"></div>
+      {{/if}}
+      {{#if availability.h12}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action avail-margin">12.00 PM   Please click here to make an appointment</a>
+      <div class="avail-margin"></div>
+      {{/if}}
+      {{#if availability.h14}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action avail-margin">2.00 PM    Please click here to make an appointment</a>
+      <div class="avail-margin"></div>
+      {{/if}}
+      {{#if availability.h16}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action avail-margin">4.00 PM    Please click here to make an appointment</a>
+      <div class="avail-margin"></div>
+      {{/if}}
+      {{#if availability.h18}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action avail-margin">6.00 PM    Please click here to make an appointment</a>
+      <div class="avail-margin"></div>
+      {{/if}}
+      {{#if availability.h20}}
+      {{else}}
+      <a href="/login" type="button" class="color list-group-item list-group-item-action avail-margin">8.00 PM    Please click here to make an appointment for AFTER HOURS</a>
+      {{/if}}
+    </div>
+</section>
+
+
+    
+   <script>
+        $(function() {
+           $( "#datepicker-4" ).datepicker({
+              dateFormat:"yy-mm-dd",
+              dateField: "#datepicker-4",
+              beforeShowDay : function (date) {
+                 var dayOfWeek = date.getDay ();
+                 // 0 : Sunday, 1 : Monday, ...
+                 if (dayOfWeek == 0 || dayOfWeek == 6) return [false];
+                 else return [true];
+                }
+              });
+            });
+</script>
